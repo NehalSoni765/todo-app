@@ -27,7 +27,6 @@ document
   });
 
 window.addEventListener("storage", (e) => {
-  console.log(e.key);
   if (e.key === "todos") {
     loadTodos()
     renderTodos();

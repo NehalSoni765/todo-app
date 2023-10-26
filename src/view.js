@@ -2,7 +2,7 @@ import { getTodos, removeTodo, toggleTodo } from "./todos";
 import { getFilters } from "./filters";
 const renderTodos = () => {
   const todosElem = document.querySelector("#todos");
-  const {searchText,hideCompleted} = getFilters();
+  const { searchText, hideCompleted } = getFilters();
   todosElem.innerHTML = "";
 
   const filterTodos = getTodos().filter((todo) => {
@@ -12,7 +12,7 @@ const renderTodos = () => {
     const hideCompletedMatch = !hideCompleted || !todo.completed;
     return searchTextMatch && hideCompletedMatch;
   });
-  
+
   const incomplete = filterTodos.filter((todo) => !todo.completed);
   todosElem.innerHTML = "";
   todosElem.appendChild(generateSummaryDom(incomplete));
@@ -67,4 +67,4 @@ const generateSummaryDom = (filterTodos) => {
   return h2element;
 };
 
-export {generateSummaryDom,generateTodoDOM,renderTodos}
+export { generateSummaryDom, generateTodoDOM, renderTodos };

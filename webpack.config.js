@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry:    ["babel-polyfill", "./src/index.js"], //start process
+  entry: ["babel-polyfill", "./src/index.js"], //start process
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public/scripts"),
@@ -21,8 +21,11 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
-    publicPath: "/scripts/",
+    static: path.join(__dirname, "public/"),
+    devMiddleware: {
+      publicPath: "/scripts/",
+    },
+    port: 3001,
   },
   devtool: "source-map", // it converts babel code to our code in browser devtool
 };

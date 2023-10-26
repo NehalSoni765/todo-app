@@ -3,12 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 let todos = [];
 
 const loadTodos = () => {
-  todos = localStorage.getItem("todos");
-  try {
-    return todos ? JSON.parse(todos) : [];
-  } catch (e) {
-    return [];
-  }
+  const todosJson = localStorage.getItem("todos");
+  return todosJson ? JSON.parse(todosJson) : [];
 };
 
 const saveTodos = () => localStorage.setItem("todos", JSON.stringify(todos));
@@ -44,6 +40,6 @@ const toggleTodo = (uuid) => {
   saveTodos(todos);
 };
 
-loadTodos();
+todos = loadTodos();
 
-export { loadTodos,saveTodos, getTodos, removeTodo, createTodo, toggleTodo };
+export { loadTodos, saveTodos, getTodos, removeTodo, createTodo, toggleTodo };
