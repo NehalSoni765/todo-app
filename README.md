@@ -10,6 +10,12 @@ The Todo App is a simple web-based task management application that allows users
 - Store todo list data in local storage.
 - Each todo item consists of a checkbox, title, and remove button.
 
+## Project Links
+
+- [GitHub Repository](https://github.com/NehalSoni765/todo-app)
+- [Live Demo](https://todomasterapp.netlify.app/)
+
+
 ## Usage
 
 ### Task List
